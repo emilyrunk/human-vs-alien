@@ -1,0 +1,49 @@
+
+{
+  "outside":{
+    "name":"outside",
+    "human_state":3,
+    "alien_state":3,
+    "branch_1":"ship",
+    "branch_2":"lagoon",
+    "human_message":"You're outside. Cool.",
+    "alien_message":"You're outside. Cool."
+  },
+  "ship":{
+    "name":"ship",
+    "human_state":3,
+    "alien_state":3,
+    "branch_1":"medbay",
+    "branch_2":"greenhouse",
+    "human_message":"You're in a spaceship. Cool.",
+    "alien_message":"You're in a spaceship. Cool."
+  },
+  "medbay": {
+    "name":"medbay",
+    "human_state":1,
+    "alien_state":2,
+    "branch_1":"",
+    "branch_2":"",
+    "human_message":"It's an alien hatchery. Look! A baby alien just hatched! Aww it's cute. It eats your face. You're dead.",
+    "alien_message":"Sweet! You've found your eggs! A baby alien just hatched! Good job, mom! Aww it missed you! You win!"
+  },
+  "lagoon": {
+    "name":"lagoon",
+    "human_state":2,
+    "alien_state":1,
+    "branch_1":"",
+    "branch_2":"",
+    "human_message":"You're in a lagoon - a Martian lagoon full of acid. It doesn't smell or anything...just kidding. It's sarin. You dead. ",
+    "alien_message":"You're in a Martian lagoon full of acid. It's paradise! Looks like a great place to settle. Good job! You win!"
+  },
+  "plant_lab": {
+    "name":"plant_lab",
+    "human_state":1,
+    "alien_state":2,
+    "branch_1":"",
+    "branch_2":"",
+    "human_message":"You're in an agricultural lab. Edible stuff is growing all round you. With your green thumb you'll live forever! Good job! You win!",
+    "alien_message":"You're in a lab full of plants growing with lots of water, soil and oxygen. AHHH!! Too much oxygen! You dead."
+  }
+
+}
