@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31858370-c387-4436-ba38-446551fd393f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Example.class" afterPath="$PROJECT_DIR$/Example.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game1/Game$1.class" afterPath="$PROJECT_DIR$/Game1/Game$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game1/Game.class" afterPath="$PROJECT_DIR$/Game1/Game.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game1/Game.java" afterPath="$PROJECT_DIR$/Game1/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game1/Locations.json" afterPath="$PROJECT_DIR$/Game1/Locations.json" />
     </list>
     <ignored path="human-vs-alien.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +29,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game1/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,11 +38,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game1/Location.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Locations.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game1/Locations.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="130" selection-start-line="45" selection-start-column="130" selection-end-line="45" selection-end-column="130" />
+            <state relative-caret-position="720">
+              <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -121,6 +133,7 @@
         <option value="$PROJECT_DIR$/Game1/Being.java" />
         <option value="$PROJECT_DIR$/Game1/Human.java" />
         <option value="$PROJECT_DIR$/Game1/Alien.java" />
+        <option value="$PROJECT_DIR$/Game1/Location.java" />
         <option value="$PROJECT_DIR$/Game1/Locations.json" />
         <option value="$PROJECT_DIR$/Game1/Game.java" />
       </list>
@@ -712,14 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game1/Being.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Game1/Human.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -746,18 +751,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Game1/Being.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Game1/Locations.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="130" selection-start-line="45" selection-start-column="130" selection-end-line="45" selection-end-column="130" />
+        <state relative-caret-position="720">
+          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game1/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Game1/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
