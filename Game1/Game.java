@@ -16,11 +16,14 @@ import java.util.Map;
 
 
 class Game {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws java.io.IOException {
         //initialize scanner object for user input
         Scanner userInput = new Scanner(System.in);
-        Being newYou;
-        String currentMessage;
+
+        String ans;
+        Being newYou = new Human();
+        String currentMessage = "";
+
 
         FileReader jsonFile = loadJsonFile("/Users/emilyrunk/Dropbox/Emily/Code/human-vs-alien/Game1/Locations.json");
 
@@ -31,22 +34,21 @@ class Game {
 
         System.out.println("Hello, would you like to be an Alien(1) or a Human(2)?");
 
-        int ans = userInput.nextInt();
+        ans = userInput.next();
+//        ans = (char) System.in.read();
 //            System.out.printf("(%s)", s);
-        
-        switch (ans){
-            case 1:
+
+        switch (ans) {
+            case "1":
                 newYou = new Alien();
                 currentMessage = currentLocation.alienMessage;
                 break;
-            case 2:
+            case "2":
                 newYou = new Human();
                 currentMessage = currentLocation.humanMessage;
                 break;
             default:
-                System.out.println("Sorry, I don't know what that means. You're dumb. " +
-                        "I don't want to play with you anymore.");
-                return;
+                tooDumbToPlay();
         }
 
         System.out.println("Congrats, you are now " + newYou.getPrefixArticle() + " " + newYou.getType() + ".");
@@ -55,13 +57,18 @@ class Game {
         System.out.println("You see a " + currentLocation.branch1 + "(1) and " + currentLocation.branch2 + "(2) in the distance. " +
                 "Where would you like to go?");
 
-        ans = userInput.nextInt();
-        if (ans == 1) {
-            currentLocation = map.get(currentLocation.branch1);
-        } else if (ans == 2) {
-            currentLocation = map.get(currentLocation.branch2);
-        }
+        ans = userInput.next();
 
+        switch (ans) {
+            case "1":
+                currentLocation = map.get(currentLocation.branch1);
+                break;
+            case "2":
+                currentLocation = map.get(currentLocation.branch2);
+                break;
+            default:
+                tooDumbToPlay();
+        }
 
 
     }
@@ -86,6 +93,12 @@ class Game {
         }.getType());
 
         return map;
+    }
+
+    private static void tooDumbToPlay() {
+        System.out.println("Sorry, I don't know what that means. You're dumb. " +
+                "I don't want to play with you anymore.");
+        return;
     }
 
 }
