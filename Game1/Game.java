@@ -23,6 +23,8 @@ class Game {
         String ans;
         Being newYou = new Human();
         String currentMessage = "";
+        int currentState = 3;
+
 
 
         FileReader jsonFile = loadJsonFile("/Users/emilyrunk/Dropbox/Emily/Code/human-vs-alien/Game1/Locations.json");
@@ -35,7 +37,6 @@ class Game {
         System.out.println("Hello, would you like to be an Alien(1) or a Human(2)?");
 
         ans = userInput.next();
-//        ans = (char) System.in.read();
 //            System.out.printf("(%s)", s);
 
         switch (ans) {
@@ -54,22 +55,38 @@ class Game {
         System.out.println("Congrats, you are now " + newYou.getPrefixArticle() + " " + newYou.getType() + ".");
         System.out.println(currentMessage);
 
-        System.out.println("You see a " + currentLocation.branch1 + "(1) and " + currentLocation.branch2 + "(2) in the distance. " +
-                "Where would you like to go?");
+        while (currentState == 3) {
 
-        ans = userInput.next();
+            System.out.println("You see a " + currentLocation.branch1 + "(1) and " + currentLocation.branch2 + "(2) in the distance. " +
+                    "Where would you like to go?");
 
-        switch (ans) {
-            case "1":
-                currentLocation = map.get(currentLocation.branch1);
-                break;
-            case "2":
-                currentLocation = map.get(currentLocation.branch2);
-                break;
-            default:
-                tooDumbToPlay();
+            ans = userInput.next();
+
+            switch (ans) {
+                case "1":
+                    currentLocation = map.get(currentLocation.branch1);
+                    break;
+                case "2":
+                    currentLocation = map.get(currentLocation.branch2);
+                    break;
+                default:
+                    tooDumbToPlay();
+            }
+
+            if (newYou instanceof Human) {
+                currentMessage = currentLocation.humanMessage;
+                currentState = currentLocation.humanState;
+
+            } else if (newYou instanceof Alien) {
+                currentMessage = currentLocation.alienMessage;
+                currentState = currentLocation.alienState;
+            }
+
+            System.out.println(currentMessage);
+            if (currentState != 3) {
+                System.exit(0);
+            }
         }
-
 
     }
 
@@ -94,6 +111,8 @@ class Game {
 
         return map;
     }
+
+
 
     private static void tooDumbToPlay() {
         System.out.println("Sorry, I don't know what that means. You're dumb. " +

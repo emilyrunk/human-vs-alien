@@ -14,7 +14,7 @@
     "humanState":3,
     "alienState":3,
     "branch1":"medbay",
-    "branch2":"greenhouse",
+    "branch2":"green_house",
     "humanMessage":"You're in a spaceship. Cool.",
     "alienMessage":"You're in a spaceship. Cool."
   },
