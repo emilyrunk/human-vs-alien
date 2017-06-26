@@ -1,4 +1,4 @@
-##### human-vs-alien
+# human-vs-alien
 
 This is intended as a reference/demonstration of concepts surrounding inheritance as well as
 abstract classes and interfaces. It also served as practice for working with git and using Android Studio
