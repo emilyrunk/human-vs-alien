@@ -18,26 +18,27 @@ import java.util.Map;
 class Game {
     public static void main(String args[]) throws java.io.IOException {
         //initialize scanner object for user input
-        Scanner userInput = new Scanner(System.in);
-
         String ans;
         Being newYou = new Human();
         String currentMessage = "";
+        String winMessage = "Good job! You win!!";
+        String loseMessage = "Terrible news! You lose!!";
         int currentState = 3;
+        final String JSON_FILE_PATH = "/Users/emilyrunk/Dropbox/Emily/Code/human-vs-alien/Game1/Locations.json";
 
 
-
-        FileReader jsonFile = loadJsonFile("/Users/emilyrunk/Dropbox/Emily/Code/human-vs-alien/Game1/Locations.json");
-
+        Scanner userInput = new Scanner(System.in);
+        FileReader jsonFile = loadJsonFile(JSON_FILE_PATH);
         Map<String, Location> map = getMap(jsonFile);
 
+
+        // *********************** INITIAL LOCATION SET UP ***********************//
         Location currentLocation = map.get("outside");
-
-
         System.out.println("Hello, would you like to be an Alien(1) or a Human(2)?");
 
         ans = userInput.next();
-//            System.out.printf("(%s)", s);
+
+
 
         switch (ans) {
             case "1":
@@ -51,17 +52,23 @@ class Game {
             default:
                 tooDumbToPlay();
         }
-
-        System.out.println("Congrats, you are now " + newYou.getPrefixArticle() + " " + newYou.getType() + ".");
+        //*********************** NEXT LOCATION SET UP***********************//
+        System.out.println("\nCongrats, you are now " + newYou.getPrefixArticle() + " " + newYou.getType() + ".");
         System.out.println(currentMessage);
 
+
+
         while (currentState == 3) {
+
+            //States: 1 Win
+            //        2 Lose
+            //        3 Continue
 
             System.out.println("You see a " + currentLocation.branch1 + "(1) and " + currentLocation.branch2 + "(2) in the distance. " +
                     "Where would you like to go?");
 
             ans = userInput.next();
-
+            //Take player to next location
             switch (ans) {
                 case "1":
                     currentLocation = map.get(currentLocation.branch1);
@@ -73,6 +80,8 @@ class Game {
                     tooDumbToPlay();
             }
 
+            //Determine if player wins, loses, or continues based on state
+            //Set message depending on whether player is human or alien
             if (newYou instanceof Human) {
                 currentMessage = currentLocation.humanMessage;
                 currentState = currentLocation.humanState;
@@ -82,10 +91,20 @@ class Game {
                 currentState = currentLocation.alienState;
             }
 
-            System.out.println(currentMessage);
-            if (currentState != 3) {
+            //Print message associated with location
+            System.out.println("\n"+currentMessage);
+
+            //Notify player if they have won or lost
+            if (currentState == 1) {
+                System.out.println(winMessage);
+                System.exit(0);
+
+            } else if (currentState == 2) {
+                System.out.println(loseMessage);
                 System.exit(0);
             }
+
+
         }
 
     }
